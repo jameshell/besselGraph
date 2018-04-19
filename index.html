@@ -203,7 +203,7 @@
                 frecuencias.unshift(labelNegativo);
               }
             
-            var constante =BESSEL.besselj(1.5, contador);
+            var constante =BESSEL.besselj(voltajePortadora, contador);
             var amplitud= parseFloat(constante)*parseFloat(voltajePortadora);
             if(contador==0){
               arreglo.push(parseFloat(amplitud));
