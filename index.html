@@ -12,13 +12,13 @@
 </head>
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-  <nav class="light-blue lighten-1" role="navigation">
+  <nav class="orange" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Sergio Arboleda</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Bessel</a></li>
       </ul>
 
-      <ul id="nav-mobile" class="sidenav">
+      <ul id="nav-mobile" class="sidenav orange">
         <li><a href="#">Función Bessel</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -45,8 +45,8 @@
           </div>
           <div class="row">
             <div class="input-field col s6">
-              <input placeholder="Unidades: [V]" id="voltajeModuladora" type="text" class="validate">
-              <label for="first_name">Voltaje Moduladora (Vm)</label>
+              <input placeholder="Unidades: [Hz]" id="voltajeModuladora" type="text" class="validate">
+              <label for="first_name">Frecuencia Moduladora (Fm)</label>
             </div>
             <div class="input-field col s6">
               <input placeholder="Unidades: [Adimensional]" id="coeficienteModulacion" type="text" class="validate">
@@ -79,27 +79,27 @@
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
+            <h5 class="center">Hecho Con Node JS</h5>
 
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+            <p class="light">Las gráficas conservan tus valores y funcionan aún después de romper la conexión.</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">User Experience Focused</h5>
+            <h5 class="center">Diseñado en Material Design</h5>
 
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+            <p class="light">Para poder ofrecerte la mejor experiencia en cuanto a animaciones y contraste de colores.</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
+            <h5 class="center">Responsive</h5>
 
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+            <p class="light">Garantizamos la funcionalidad de la página en todos tus dispositivos.</p>
           </div>
         </div>
       </div>
@@ -220,17 +220,24 @@
        var ctx = document.getElementById('myChart').getContext('2d');
        var chart = new Chart(ctx, {
          // The type of chart we want to create
-         type: 'line',
+         type: 'bar',
 
          // The data for our dataset
          data: {
            labels: frecuencias,
            datasets: [{
-             label: "Envolvente",
-             backgroundColor: 'rgb(255, 99, 132)',
-             borderColor: 'rgb(255, 99, 132)',
-             data: arreglo,
-           }]
+             label: "Laterales Significativos",
+             backgroundColor: '#1565c0',
+             borderColor: '#1565c0',
+             data: arreglo
+           },
+          { 
+            label: "Envolvente",
+            backgroundColor: '#e3f2fd',
+            borderColor: '#2196f3 ',
+            data: arreglo,
+            type: 'line',
+          }]
          },
 
          // Configuration options go here
@@ -239,6 +246,25 @@
 
         event.preventDefault();
       });
+
+
+      var mixedChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            datasets: [{
+              label: 'Bar Dataset',
+              data: [10, 20, 30, 40]
+            }, {
+              label: 'Line Dataset',
+              data: [50, 50, 50, 50],
+
+              // Changes this dataset to become a line
+              type: 'line'
+            }],
+            labels: ['January', 'February', 'March', 'April']
+          },
+          options: options
+        });
  
   </script>
 
