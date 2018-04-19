@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Bessel</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Sergio Arboleda</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Bessel</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Función Bessel</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Función de Bessel</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">En esta página puedes generar la envolvente de de la función de Bessel</h5>
+      </div>
+      <div class="row">
+        <form class="input-field col s12" id="parametros">
+          <div class="row">
+            <div class="input-field col s6">
+              <input placeholder="Unidades: [V]" id="voltajePortadora" type="text" class="validate">
+              <label for="first_name">Voltaje Portadora (Vp)</label>
+            </div>
+            <div class="input-field col s6">
+              <input placeholder="Unidades: [Hz]" id="frecuenciaPortadora" type="text" class="validate">
+              <label for="first_name">Frecuencia Portadora (Fp)</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input placeholder="Unidades: [V]" id="voltajeModuladora" type="text" class="validate">
+              <label for="first_name">Voltaje Moduladora (Vm)</label>
+            </div>
+            <div class="input-field col s6">
+              <input placeholder="Unidades: [Adimensional]" id="coeficienteModulacion" type="text" class="validate">
+              <label for="first_name">Coeficiente de Modulación (M)</label>
+            </div>
+          </div>
+          <div class="row center">
+            <button class="btn-large waves-effect waves-light orange">Generar Gráfica
+              <i class="material-icons right">graphic_eq</i>
+            </button>
+          </div>
+        </form>
+      </div>
+
+
+      <div class="row" id="grafico">
+        <canvas id="myChart"></canvas>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Speeds up development</h5>
+
+            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">User Experience Focused</h5>
+
+            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Easy to work with</h5>
+
+            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br><br>
+  </div>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Laboratorio</h5>
+          <p class="grey-text text-lighten-4">Esta es una aplicación desarrollada para la clase de Telecomunicaciones 1. Persiste sobre eletron JS que utiliza V8 y Node JS. Su función se basa en mostrar la envolvente que destaca a partir de la función de Bessel.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Documentación</h5>
+          <ul>
+            <li><a class="white-text" href="https://github.com/jameshell/besselGraph">Repositorio en Github</a></li>
+            <li><a class="white-text" href="#!">Wiki de la App</a></li>
+            <li><a class="white-text" href="#!">Correo</a></li>
+            <li><a class="white-text" href="#!">Universidad Sergio Arboleda</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com"> Javier Alonso & Jaime Alonso</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="bessel.js"></script>
+  <script>
+     $("#parametros").submit(function (event) {
+       $('#myChart').remove(); // this is my <canvas> element
+       $('#grafico').append('<canvas id="myChart"></canvas>');
+        var voltajePortadora = document.getElementById("voltajePortadora").value;
+        var frecuenciaPortadora = document.getElementById("frecuenciaPortadora").value;
+        var frecuenciaModuladora = document.getElementById("voltajeModuladora").value;
+        var coeficienteModulacion = document.getElementById("coeficienteModulacion").value;
+        var arreglo=[];
+        var iteracionesBessel;
+
+          if(coeficienteModulacion<0.25){
+            iteracionesBessel = 1;
+          } else if (coeficienteModulacion <0.5){
+            iteracionesBessel = 2;
+          } else if (coeficienteModulacion < 1) {
+            iteracionesBessel = 3;
+          } else if (coeficienteModulacion < 1.5) {
+            iteracionesBessel = 4;
+          } else if (coeficienteModulacion < 2.0) {
+            iteracionesBessel = 5;
+          } else if (coeficienteModulacion < 2.4) {
+            iteracionesBessel = 5;
+          } else if (coeficienteModulacion < 2.5) {
+            iteracionesBessel = 6;
+          } else if (coeficienteModulacion < 3) {
+            iteracionesBessel = 7;
+          } else if (coeficienteModulacion < 4) {
+            iteracionesBessel = 7;
+          } else if (coeficienteModulacion < 5) {
+            iteracionesBessel = 8;
+          } else if (coeficienteModulacion < 5.45) {
+            iteracionesBessel = 9;
+          } else if (coeficienteModulacion < 6) {
+            iteracionesBessel = 10;
+          } else if (coeficienteModulacion < 7) {
+            iteracionesBessel = 10;
+          } else if (coeficienteModulacion < 8) {
+            iteracionesBessel = 11;
+          } else if (coeficienteModulacion < 8.65) {
+            iteracionesBessel = 12;
+          } else if (coeficienteModulacion < 9) {
+            iteracionesBessel = 13;
+          } else if (coeficienteModulacion < 10) {
+            iteracionesBessel = 14;
+          } else {
+            iteracionesBessel = 15;
+          }
+
+          var contador=0;
+          var frecuencias = [];
+          var contadorLabel=0;
+          	while(contador<=iteracionesBessel){
+              if(contador==0){
+                frecuencias.push(frecuenciaPortadora);
+              } else {
+                var labelNegativo = frecuenciaPortadora - (frecuenciaModuladora * contadorLabel);
+                var labelPositivo2 = parseFloat(contadorLabel * frecuenciaModuladora);
+                var labelPositivo = parseFloat(frecuenciaPortadora)+labelPositivo2;
+                frecuencias.push(labelPositivo);
+                frecuencias.unshift(labelNegativo);
+              }
+            
+            var constante =BESSEL.besselj(1.5, contador);
+            var amplitud= parseFloat(constante)*parseFloat(voltajePortadora);
+            if(contador==0){
+              arreglo.push(parseFloat(amplitud));
+            } else {
+              arreglo.push(amplitud);
+              arreglo.unshift(amplitud);
+            }
+              contador= contador+1;
+              contadorLabel = contadorLabel+1;
+            }
+
+
+       
+       var ctx = document.getElementById('myChart').getContext('2d');
+       var chart = new Chart(ctx, {
+         // The type of chart we want to create
+         type: 'line',
+
+         // The data for our dataset
+         data: {
+           labels: frecuencias,
+           datasets: [{
+             label: "Envolvente",
+             backgroundColor: 'rgb(255, 99, 132)',
+             borderColor: 'rgb(255, 99, 132)',
+             data: arreglo,
+           }]
+         },
+
+         // Configuration options go here
+         options: {}
+       }); 
+
+        event.preventDefault();
+      });
+ 
+  </script>
+
+  </body>
+</html>
